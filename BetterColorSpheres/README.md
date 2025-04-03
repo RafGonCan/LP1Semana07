@@ -1,4 +1,6 @@
-```UML Diagram
+# UML Diagram BetterColorSphere
+
+```mermaid
 
 classDiagram
     class Color {

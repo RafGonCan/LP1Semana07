@@ -14,6 +14,12 @@ namespace ColorSpheres
             Color redColor = new Color(255,0,0);
             Sphere sphere = new  Sphere(redColor, 5.0f);
 
+            sphere.Throw();
+            sphere.Throw();
+            sphere.Throw();
+            sphere.Pop();
+            sphere.Throw();
+
             Console.WriteLine(redColor.GetRed());
             Console.WriteLine(sphere.GetTimesThrown());
         }

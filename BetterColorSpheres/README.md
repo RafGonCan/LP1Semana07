@@ -1,31 +1,29 @@
-+-----------------+
-|      Color      |
-+-----------------+
-| - Red: byte     |
-| - Green: byte   |
-| - Blue: byte    |
-| - Alpha: byte   |
-+-----------------+
-| + Color(red: byte, gree: byte, blue: byte, alpha: byte)   |
-| + Color(red: byte, gree: byte, blue: byte)                |
-| + Grey: byte {get}                                        |
-+-----------------+
+```UML Diagram
 
-+-----------------+
-|      Sphere     |
-+-----------------+
-| - Color: Color  |
-| - Radius: float |
-| - Throws: int   |
-+-----------------+
-| + Sphere(color: Color, radius: float)                     |
-| + Pop(): void                                             |
-| + Throw(): void                                           |
-| + GetTimesThrown(): int                                   |
-+-----------------+
+classDiagram
+    class Color {
+        - byte Red
+        - byte Green
+        - byte Blue
+        - byte Alpha
+        + Color(byte red, byte green, byte blue, byte alpha)
+        + Color(byte red, byte green, byte blue)
+        + byte Grey
+    }
 
-+-----------------+
-|      Program    |
-+-----------------+
-| + Main(args[]: void)                                      |
-+-----------------+
+    class Sphere {
+        - Color Color
+        - float Radius
+        - int Throws
+        + Sphere(Color color, float radius)
+        + void Pop()
+        + void Throw()
+        + int GetTimesThrown()
+    }
+
+    class Program {
+        + void Main(string[] args)
+    }
+
+    Program --> Sphere
+    Sphere --> Color

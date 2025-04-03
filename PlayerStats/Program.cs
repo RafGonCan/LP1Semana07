@@ -52,5 +52,13 @@ namespace PlayerStats
             // --------------------------------
 
         }
+        public class Player
+        {
+            private float highScore;
+            public int PlayedGames {get; private set;}
+            public int WonGames {get; private set;}
+            public string Name {get;}
+
+        }
     }
 }

@@ -79,6 +79,15 @@ namespace PlayerStats
                 WonGames = 0;
              }
 
+             public void PlayGame(bool win)
+             {
+                PlayedGames++;
+                if (win)
+                {
+                    WonGames++;
+                }
+             }
+
              public float WinRate
              {
                 get

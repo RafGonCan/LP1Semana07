@@ -59,6 +59,17 @@ namespace PlayerStats
             public int WonGames {get; private set;}
             public string Name {get;}
 
+            public float HighScore
+            {
+                get => highScore;
+                set
+                {
+                    if (value > highScore)
+                    {
+                        highScore = value;
+                    }
+                }
+            }
         }
     }
 }

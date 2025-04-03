@@ -12,16 +12,29 @@ namespace ColorSpheres
         private static void Main(string[] args)
         {     
             Color redColor = new Color(255,0,0);
-            Sphere sphere = new  Sphere(redColor, 5.0f);
+            Sphere redSphere = new  Sphere(redColor, 5.0f);
+            Color greenColor = new Color(0,255,0);
+            Sphere greenSphere = new  Sphere(redColor, 5.0f);
+            Color blueColor = new Color(0,0,255);
+            Sphere blueSphere = new  Sphere(redColor, 5.0f);
 
-            sphere.Throw();
-            sphere.Throw();
-            sphere.Throw();
-            sphere.Pop();
-            sphere.Throw();
+            redSphere.Throw();
+            redSphere.Throw();
+            greenSphere.Throw();
+            greenSphere.Throw();
+            greenSphere.Throw();
+            blueSphere.Throw();
+            redSphere.Pop();
+            greenSphere.Pop();
+            blueSphere.Pop();
 
-            Console.WriteLine(redColor.GetRed());
-            Console.WriteLine(sphere.GetTimesThrown());
+            Console.WriteLine($"Red: {redColor.GetRed()}");
+            Console.WriteLine($"Green: {greenColor.GetGreen()}");
+            Console.WriteLine($"Blue: {blueColor.GetBlue()}");
+
+            Console.WriteLine(redSphere.GetTimesThrown());
+            Console.WriteLine(greenSphere.GetTimesThrown());
+            Console.WriteLine(blueSphere.GetTimesThrown());
         }
         public class Color
         {

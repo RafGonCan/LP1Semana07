@@ -78,6 +78,15 @@ namespace PlayerStats
                 PlayedGames = 0;
                 WonGames = 0;
              }
+
+             public float WinRate
+             {
+                get
+                {
+                    if (PlayedGames == 0) return 0;
+                    return (float)WonGames/PlayedGames;                
+                }
+             }
         }
     }
 }

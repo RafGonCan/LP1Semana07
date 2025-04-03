@@ -23,13 +23,13 @@ namespace BetterColorSpheres
             greenSphere.Pop();
             blueSphere.Pop();
 
-            Console.WriteLine($"Red: {redColor.GetRed()}");
-            Console.WriteLine($"Green: {greenColor.GetGreen()}");
-            Console.WriteLine($"Blue: {blueColor.GetBlue()}");
+            Console.WriteLine($"Red: {redColor.Red}");
+            Console.WriteLine($"Green: {greenColor.Green}");
+            Console.WriteLine($"Blue: {blueColor.Blue}");
 
-            Console.WriteLine(redSphere.GetTimesThrown());
-            Console.WriteLine(greenSphere.GetTimesThrown());
-            Console.WriteLine(blueSphere.GetTimesThrown());
+            Console.WriteLine(redSphere.Throws);
+            Console.WriteLine(greenSphere.Throws);
+            Console.WriteLine(blueSphere.Throws);
         }
         public class Color
         {
@@ -55,33 +55,29 @@ namespace BetterColorSpheres
         
         public class Sphere
         {
-            readonly Color color;
-            private float radius;
-            private int throws;
+            public Color Color {get;}
+            public float Radius {get; private set;}
+            public int Throws {get; private set;}
 
             public Sphere(Color color, float radius)
             {
-                this.color = color;
-                this.radius = radius;
-                throws = 0;
+                Color = color;
+                Radius = radius;
+                Throws = 0;
             }
 
-            public float Pop()
+            public void Pop()
             {
-                return radius = 0.0f;
+                Radius = 0.0f;
             }
 
             public void Throw()
             {
-                if (radius > 0)
+                if (Radius > 0)
                 {
-                    throws++;
+                    Throws++;
                 }
             } 
-            public int GetTimesThrown()
-            {
-                return throws;
-            }
         }
     }
 }

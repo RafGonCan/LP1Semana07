@@ -43,7 +43,7 @@ namespace ColorSpheres
             private byte blue;
             private byte alpha;
             
-            private Color (byte red, byte green, byte blue, byte alpha)
+            public Color (byte red, byte green, byte blue, byte alpha)
             {
                 this.red = red;
                 this.green = green;
@@ -51,7 +51,7 @@ namespace ColorSpheres
                 this.alpha = alpha;
             }
 
-            internal Color (byte red, byte green, byte blue) : this(red, green, blue, 255)
+            public Color (byte red, byte green, byte blue) : this(red, green, blue, 255)
             {
             }
 
@@ -68,30 +68,30 @@ namespace ColorSpheres
         
         public class Sphere
         {
-            private Color color;
+            readonly Color color;
             private float radius;
             private int throws;
 
-            internal Sphere(Color color, float radius)
+            public Sphere(Color color, float radius)
             {
                 this.color = color;
                 this.radius = radius;
-                this.throws = 0;
+                throws = 0;
             }
 
-            internal float Pop()
+            public float Pop()
             {
                 return radius = 0.0f;
             }
 
-            internal void Throw()
+            public void Throw()
             {
                 if (radius > 0)
                 {
                     throws++;
                 }
             } 
-            internal int GetTimesThrown()
+            public int GetTimesThrown()
             {
                 return throws;
             }

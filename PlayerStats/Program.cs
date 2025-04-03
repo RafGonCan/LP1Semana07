@@ -70,6 +70,14 @@ namespace PlayerStats
                     }
                 }
             }
+
+            public Player(string name)
+             {
+                Name = name;
+                highScore = 0.0f;
+                PlayedGames = 0;
+                WonGames = 0;
+             }
         }
     }
 }

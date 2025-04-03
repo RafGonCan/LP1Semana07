@@ -12,8 +12,10 @@ namespace ColorSpheres
         private static void Main(string[] args)
         {     
             Color redColor = new Color(255,0,0);
+            Sphere sphere = new  Sphere(redColor, 5.0f);
 
             Console.WriteLine(redColor.GetRed());
+            Console.WriteLine(sphere.GetTimesThrown());
         }
         public class Color
         {
@@ -42,6 +44,37 @@ namespace ColorSpheres
             public byte GetGrey()
             {
                 return (byte)((red+green+blue)/3);
+            }
+        }
+        
+        public class Sphere
+        {
+            private Color color;
+            private float radius;
+            private int throws;
+
+            internal Sphere(Color color, float radius)
+            {
+                this.color = color;
+                this.radius = radius;
+                this.throws = 0;
+            }
+
+            internal float Pop()
+            {
+                return radius = 0.0f;
+            }
+
+            internal void Throw()
+            {
+                if (radius > 0)
+                {
+                    throws++;
+                }
+            } 
+            internal int GetTimesThrown()
+            {
+                return throws;
             }
         }
     }

@@ -3,6 +3,7 @@ using System.Data.Common;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 
 namespace MyRoguelike
 {
@@ -54,12 +55,15 @@ namespace MyRoguelike
             readonly string name;
             private int xp;
             private float health;
-            private int level {get;}
+            private int level;
             public float MaxHealth {get;}
 
-            public string Name
+            public Hero (string name)
             {
-                get => name;
+                this.name = name;
+                Health = 100;
+                this.xp = 0;
+                this.level = 1;
             }
 
             public int XP
@@ -67,12 +71,21 @@ namespace MyRoguelike
                 get => xp;
                 set
                 {
-                    xp ++;
+                    xp = value;
+                    if (xp >= 1000 * level)
+                    {
+                        level++;
+                        MaxHealth += 20;
+                        xp -= 1000 * (level -1);
+                        if (xp < 0)
+                        {
+                            xp = 0;
+                        }
+                    }
                 }
             }
             public float Health
             {
-                get => Health;
                 set
                 {
                     if (health > MaxHealth)
@@ -91,8 +104,13 @@ namespace MyRoguelike
                 get => level;
                 set
                 {
-                    if (xp >= 1000)
-                    {       
+                    if (value < 1)
+                    {
+                        level = 1;
+                    }
+                    else
+                    {
+                        level = value;
                     }
                 }
             }

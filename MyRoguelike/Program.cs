@@ -56,14 +56,13 @@ namespace MyRoguelike
             private int xp;
             private float health;
             private int level;
-            public float MaxHealth {get;}
+            private float maxHealth;
 
             public Hero (string name)
             {
                 this.name = name;
-                Health = 100;
-                this.xp = 0;
-                this.level = 1;
+                level = 1;
+                health = 100;
             }
 
             public string Name => name;
@@ -77,7 +76,6 @@ namespace MyRoguelike
                     if (xp >= 1000 * level)
                     {
                         level++;
-                        MaxHealth = 100 +(level -1) * 20;
                         if (xp < 0)
                         {
                             xp = 0;
@@ -98,6 +96,15 @@ namespace MyRoguelike
                     {
                         health = 0;
                     }
+                }
+            }
+
+            public float MaxHealth
+            {
+                get => maxHealth;
+                set
+                {
+                    maxHealth = 100 + (level - 1) * 20;
                 }
             }
 

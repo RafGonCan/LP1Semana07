@@ -63,7 +63,17 @@ namespace MyRoguelike
                     xp ++;
                 }
             }
-
+             private float Health
+            {
+                get => health;
+                set
+                {
+                    if (health < 0)
+                    {
+                        health = 0;
+                    }
+                }
+            }
         }
     }
 }

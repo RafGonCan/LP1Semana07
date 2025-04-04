@@ -66,6 +66,8 @@ namespace MyRoguelike
                 this.level = 1;
             }
 
+            public string Name => name;
+
             public int XP
             {
                 get => xp;
@@ -75,8 +77,7 @@ namespace MyRoguelike
                     if (xp >= 1000 * level)
                     {
                         level++;
-                        MaxHealth += 20;
-                        xp -= 1000 * (level -1);
+                        MaxHealth = 100 +(level -1) * 20;
                         if (xp < 0)
                         {
                             xp = 0;
@@ -86,6 +87,7 @@ namespace MyRoguelike
             }
             public float Health
             {
+                get => health;
                 set
                 {
                     if (health > MaxHealth)
@@ -112,6 +114,19 @@ namespace MyRoguelike
                     {
                         level = value;
                     }
+                }
+            }
+
+            public void TakeDamage(float damage)
+            {
+                if (damage < 0)
+                {
+                    damage = 0;
+                }
+                else
+                {
+                    health -= damage;
+                    XP += (int)(damage/20);
                 }
             }
         }

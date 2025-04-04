@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterColorSpheres", "Bette
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerStats", "PlayerStats\PlayerStats.csproj", "{EC068393-6226-4440-8B05-E9475F447FCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRoguelike", "MyRoguelike\MyRoguelike.csproj", "{F02D90C4-E6F5-422B-A05D-FD3015A2D541}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{EC068393-6226-4440-8B05-E9475F447FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC068393-6226-4440-8B05-E9475F447FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC068393-6226-4440-8B05-E9475F447FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F02D90C4-E6F5-422B-A05D-FD3015A2D541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F02D90C4-E6F5-422B-A05D-FD3015A2D541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F02D90C4-E6F5-422B-A05D-FD3015A2D541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F02D90C4-E6F5-422B-A05D-FD3015A2D541}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

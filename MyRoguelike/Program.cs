@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data.Common;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace MyRoguelike
 {
@@ -52,8 +54,8 @@ namespace MyRoguelike
             public string Name {get;}
             private int xp;
             private float health;
-            readonly int level;
-            readonly float maxHealth;
+            private int level {get;}
+            public float MaxHealth {get;}
 
             private int XP
             {
@@ -65,12 +67,27 @@ namespace MyRoguelike
             }
              private float Health
             {
-                get => health;
+                get => Health;
                 set
                 {
-                    if (health < 0)
+                    if (health > MaxHealth)
+                    {
+                        health = MaxHealth;
+                    }
+                    else if (health < 0)
                     {
                         health = 0;
+                    }
+                }
+            }
+
+            public int Level
+            {
+                get => level;
+                set
+                {
+                    if (xp >= 1000)
+                    {       
                     }
                 }
             }
